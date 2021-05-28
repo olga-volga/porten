@@ -17,7 +17,7 @@
 							</div>
 							<div class="header-top__column">
 								<img src="img/header/icons/login.svg" alt="login" class="header-top__login">
-								<a href="" class="header-top__link">Войти / Регистрация</a>
+								<a data-login href="" class="header-top__link">Войти / Регистрация</a>
 							</div>
 						</div>
 					</div>
@@ -41,7 +41,7 @@
 								</div>
 								<div id="wrap" class="header__search">
 									<form action="#" class="form-body">
-										<input type="text" name="search" placeholder="">
+										<input type="text" name="search" placeholder="" class="form__search">
 									</form>
 								</div>
 							</div>
@@ -273,7 +273,7 @@
 								<div class="footer__form">
 									<form action="" class="form__body">
 										<div class="input-line">
-											<input type="email" name="email" placeholder="Ваша почта" class="input__line">
+											<input required type="email" name="email" placeholder="Ваша почта" class="input__line">
 										</div>
 										<div class="submit-button">
 											<input type="submit" value="Подписаться" class="submit__btn footer__btn">
@@ -295,6 +295,49 @@
 					</div>
 				</div>
 			</footer>
+
+			<div class="modal">
+				<div class="modal__body">
+					<div data-close class="modal__close">&times;</div>
+					<div class="modal__headers">
+						<h4 id="login" class="modal__title">Войти</h4>
+						<h4 id="signup" class="modal__title">Регистрация</h4>
+					</div>
+					<div class="form-content">
+						<form action="#" class="modal__form">
+			                <div class="input">
+			                    <input required placeholder="Email" name="email" type="email" class="modal__input">
+			                    <input required placeholder="Пароль" name="password" type="password" class="modal__input">
+			                </div>
+			                <button class="modal__btn btn btn--section">Войти</button>
+			                <div class="modal__link">
+			                	<a href="#">Забыли пароль?</a>
+			                </div>
+			                <div class="modal__link">
+			                	<a data-signup href="#">Еще нет аккаунта? Зарегистрироваться</a>
+			                </div>
+			            </form>
+					</div>
+					<div class="form-content">
+			            <form action="#" class="modal__form">
+			                <div class="input">
+			                	<input required placeholder="Имя пользователя" name="username" type="text" class="modal__input">
+			                    <input required placeholder="Email" name="email" type="email" class="modal__input">
+			                    <input required placeholder="Пароль" name="password" type="password" class="modal__input">
+			                </div>
+			                <button class="modal__btn btn">Регистрация</button>
+			            </form>
+			        </div>
+				</div>
+			</div>
+
+			<div class="modal-email">
+				<div class="modal-email__body">
+					<div class="modal-email__close">&times;</div>
+					<h4 class="modal-email__title">Вы успешно подписались!</h4>
+					<p class="modal-email__text">Теперь вы будете в курсе самых свежих новостей и скидок!</p>
+				</div>
+			</div>
 		</div>
 		<script src="js/script.js"></script>
 	</body>

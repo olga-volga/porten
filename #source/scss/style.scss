@@ -195,7 +195,7 @@ body {
 #wrap {}
 .form-body {}
 .form__search {}
-input[type=text] {
+.form__search {
 	width: 20px;
 	border: none;
 	font-size: 14px;
@@ -287,19 +287,22 @@ input[type=text]:focus {
 		top: -100%;
 		overflow: auto;
 		background-color: #0F0F0F;
-		padding: 100px 0 20px;
+		padding: 140px 0 20px;
 		transition: all 0.3s ease 0s;
 	}
 	.header__menu.active {
 		top: 0;
 	}
 	.header__list {
-		display: block;
+		flex-direction: column;
+		align-items: center;
+		li {
+			margin-bottom: 40px;
+		}
 	}
 	.header__link {
-		font-size: 16px;
-		display: block;
-		padding: 30px;
+		font-size: 18px;
+		padding: 0;
 	}
 }
 @media (max-width: $md4+px) {
@@ -316,9 +319,6 @@ input[type=text]:focus {
 	.header__search,
 	.header__burger {
 		margin-left: 20px;
-	}
-	.header__link {
-		padding: 20px;
 	}
 }
 //===ОСНОВНОЙ БЛОК===//
@@ -870,5 +870,158 @@ input:-ms-input-placeholder {color: #969696;}
 	.footer-bottom__body {
 		flex-direction: column;
 		justify-content: center;
+	}
+}
+
+/*===MODAL LOGIN===*/
+.modal {
+	display: none;
+	position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, .6);
+
+    &__body {
+		max-width: 400px;
+		max-height: 80vh;
+        overflow-y: auto;
+		margin: 50px auto 0;
+		background-color: #fff;
+	}
+	&__form {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 60px 40px 40px;
+	}
+	&__close {
+		position: absolute;
+		top: 10px;
+		right: 20px;
+		font-size: 50px;
+		color: #fff;
+		cursor: pointer;
+	}
+	&__headers {
+		display: flex;
+		max-width: 100%;
+		background: rgba(31, 31, 31, .2);
+	}
+	&__title {
+		flex: 1;
+		font-weight: 500;
+		font-size: 22px;
+		line-height: 30px;
+		padding: 15px 0;
+		text-align: center;
+		color: #fff;
+		cursor: pointer;
+		
+	}
+	&__title--active {
+			color: #0F0F0F;
+			background-color: #fff;
+		}
+	.input {
+		width: 100%;
+		margin-bottom: 20px;
+	}
+	&__input {
+		display: block;
+		width: 100%;
+		border: 1px solid rgba(89, 94, 100, .5);
+		padding: 10px;
+		margin-bottom: 15px;
+	}
+	&__btn {
+		width: 100%;
+		background-color: #0F0F0F;
+		margin-bottom: 20px;
+	}
+	&__link {
+		text-align: center;
+		a {
+			text-align: center;
+			color: rgba(31, 31, 31, .7);
+			text-decoration: underline;
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
+	@media (max-width: $md3+px) {
+		padding: 0px 30px;
+	}
+	@media (max-width: $md6+px) {
+		padding: 0px 20px;
+
+		&__form {
+			padding: 60px 20px 20px;
+		}
+		&__title {
+			font-size: 18px;
+			line-height: 28px;
+			padding: 10px 0;
+		}
+	}
+}
+
+/*===MODAL EMAIL===*/
+.modal-email {
+	display: none;
+	position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, .6);
+
+	&__body {
+		position: relative;
+		max-width: 400px;
+		max-height: 50vh;
+        overflow-y: auto;
+		margin: 50px auto 0;
+		background-color: #fff;
+		padding: 50px 40px 40px;
+	}
+	&__close {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		font-size: 45px;
+		color: #0F0F0F;
+		cursor: pointer;
+	}
+	&__title {
+		font-family: 'Playfair Display', serif;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 18px;
+		line-height: 24px;
+		text-align: center;
+		color: #0F0F0F;
+		margin-bottom: 10px;
+	}
+	&__text {
+		color: #0F0F0F;
+		text-align: center;
+	}
+	@media (max-width: $md3+px) {
+		padding: 0px 30px;
+	}
+	@media (max-width: $md6+px) {
+		padding: 0px 20px;
+
+		&__body {
+			padding: 40px 20px 20px;
+		}
 	}
 }
